@@ -23,7 +23,7 @@ public class WordleGame {
     }
 
     public String makeStep(String guess) {
-        if (isWon || steps <= 0 ) {
+        if (isWon || steps <= 0) {
             throw new RuntimeException("Игра окончена");
 
         }
@@ -51,6 +51,7 @@ public class WordleGame {
         Random random = new Random();
         return hint.get(random.nextInt(hint.size()));
     }
+
     private boolean matchHistory(String word) {
         for (Map.Entry<String, String> entry : history.entrySet()) {
             String guessWord = entry.getKey();
@@ -146,10 +147,25 @@ public class WordleGame {
         }
         return new String(mask);
     }
-    public boolean isWon() { return isWon; }
-    public boolean isLost() { return steps == 0 && !isWon; }
-    public int getStepsLeft() { return steps; }
-    public String getAnswer() { return answer; }
-    public LinkedHashMap<String, String> getHistory() { return history; }
+
+    public boolean isWon() {
+        return isWon;
+    }
+
+    public boolean isLost() {
+        return steps == 0 && !isWon;
+    }
+
+    public int getStepsLeft() {
+        return steps;
+    }
+
+    public String getAnswer() {
+        return answer;
+    }
+
+    public LinkedHashMap<String, String> getHistory() {
+        return history;
+    }
 
 }
