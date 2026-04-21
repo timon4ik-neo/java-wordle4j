@@ -12,7 +12,7 @@ public class WordleGame {
 
     private boolean isWon;
 
-    LinkedHashMap<String, String> history;
+    private LinkedHashMap<String, String> history;
 
     public WordleGame(WordleDictionary dictionary) {
         this.dictionary = dictionary;
